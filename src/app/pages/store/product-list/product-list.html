@@ -1,0 +1,9 @@
+@for(product of productsList.products; track product.id) {
+    <app-product-card
+        [productId]="product.id"
+        [productName]="product.name"
+        [productDescription]="product.description"
+        [productUnitPrice]="product.unitPrice"
+        [productStock]="product.stock"
+    />
+}

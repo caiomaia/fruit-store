@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PricePromotionComponent } from './price-promotion-component';
+import { Management } from './management';
 
-describe('PricePromotionComponent', () => {
-  let component: PricePromotionComponent;
-  let fixture: ComponentFixture<PricePromotionComponent>;
+describe('Management', () => {
+  let component: Management;
+  let fixture: ComponentFixture<Management>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PricePromotionComponent]
+      imports: [Management]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PricePromotionComponent);
+    fixture = TestBed.createComponent(Management);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

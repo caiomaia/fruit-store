@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Maçã Gala",
+      "category": "Fruta",
+      "unitPrice": 4.50,
+      "description": "Maçã doce e suculenta, ideal para consumo in natura.",
+      "stock": 120
+    },
+    {
+      "id": 2,
+      "name": "Banana Prata",
+      "category": "Fruta",
+      "unitPrice": 3.20,
+      "description": "Banana de sabor suave, ótima para lanches rápidos.",
+      "stock": 200
+    },
+    {
+      "id": 3,
+      "name": "Mamão Papaya",
+      "category": "Fruta",
+      "unitPrice": 5.80,
+      "description": "Fruta macia e doce, rica em fibras e vitaminas.",
+      "stock": 75
+    },
+    {
+      "id": 4,
+      "name": "Laranja Pera",
+      "category": "Fruta",
+      "unitPrice": 2.90,
+      "description": "Laranja suculenta, ideal para sucos naturais.",
+      "stock": 150
+    },
+    {
+      "id": 5,
+      "name": "Tomate Italiano",
+      "category": "Legume",
+      "unitPrice": 6.00,
+      "description": "Tomate alongado, ideal para molhos e saladas.",
+      "stock": 95
+    },
+    {
+      "id": 6,
+      "name": "Cenoura",
+      "category": "Legume",
+      "unitPrice": 3.50,
+      "description": "Legume crocante e adocicado, rico em vitamina A.",
+      "stock": 180
+    },
+    {
+      "id": 7,
+      "name": "Batata Inglesa",
+      "category": "Legume",
+      "unitPrice": 2.80,
+      "description": "Batata versátil para fritar, cozinhar e assar.",
+      "stock": 220
+    },
+    {
+      "id": 8,
+      "name": "Alface Crespa",
+      "category": "Verdura",
+      "unitPrice": 2.50,
+      "description": "Folhas verdes e crocantes, ideal para saladas frescas.",
+      "stock": 60
+    },
+    {
+      "id": 9,
+      "name": "Couve Manteiga",
+      "category": "Verdura",
+      "unitPrice": 3.00,
+      "description": "Folhas escuras e nutritivas, ótima para refogados.",
+      "stock": 70
+    },
+    {
+      "id": 10,
+      "name": "Espinafre",
+      "category": "Verdura",
+      "unitPrice": 4.00,
+      "description": "Verdura rica em ferro, muito utilizada em suflês e saladas.",
+      "stock": 85
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import {
   PoToolbarAction,
   PoToolbarModule,
 } from '@po-ui/ng-components';
+import { RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -15,19 +16,16 @@ import {
     CommonModule,
     PoToolbarModule,
     PoMenuModule,
-    PoPageModule
-  ],
+    PoPageModule,
+    RouterModule
+],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
 export class App {
   readonly menus: Array<PoMenuItem> = [
-    { label: 'Loja', action: this.onClick.bind(this), icon: 'an an-basket', shortLabel: 'Loja' },
-    { label: 'Gerenciar produtos', action: this.onClick.bind(this), icon: 'an an-book-open-text', shortLabel: 'Gerenciar' },
+    { label: 'Loja', link: 'store', icon: 'an an-basket', shortLabel: 'Loja' },
+    { label: 'Gerenciar produtos', link: 'management', icon: 'an an-book-open-text', shortLabel: 'Gerenciar' },
   ];
-
-  private onClick() {
-    alert('Clicked in menu item');
-  }
 
 }
