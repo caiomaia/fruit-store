@@ -4,8 +4,8 @@ import { SharedModule } from '../../../../shared/modules/shared/shared-module';
 @Component({
   selector: 'app-product-card',
   imports: [SharedModule],
-  templateUrl: './product-card.html',
-  styleUrl: './product-card.scss',
+  templateUrl: './product-card.component.html',
+  styleUrl: './product-card.component.scss',
 })
 export class ProductCard {
 
@@ -14,4 +14,5 @@ export class ProductCard {
   productUnitPrice = input<number>(0);
   productDescription = input<string>('');
   productStock = input<number>(0);
+  productImage = input<string>('');
 }
