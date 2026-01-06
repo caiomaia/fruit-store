@@ -1,0 +1,19 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttons-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;            // alinha verticalmente
+}

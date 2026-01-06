@@ -1,5 +1,24 @@
-<po-page-slide #cartSlide 
-    p-title="Carrinho"
-    p-size="sm"
-    (p-close)="closeCart()"
-/>
+<po-page-slide #cartSlide p-title="Carrinho" p-size="sm" (p-close)="closeCart()">
+    @for(cartProduct of productsInCart$().products; track cartProduct.id) {
+        <po-container class="po-mt-2 po-mb-2">
+            <div class="cart-item">
+                <div>
+                    <h5>{{ cartProduct.name }}</h5>
+                    <p>Quantidade: 2</p>
+                    <p>Preço total: R$ 10.00</p>
+                    <div class="buttons-cart po-mt-2">
+                        <po-button p-icon="an an-minus" p-kind="tertiary" (p-click)="''"></po-button>
+                        <po-button p-icon="an an-plus" p-kind="tertiary"></po-button>
+                    </div>
+                </div>
+                <img [src]="cartProduct.pathImage" width="120" height="100"/>
+            </div>
+        </po-container>
+    }
+<po-page-slide-footer>
+    <div class="cart-footer">
+        Total: R$ 20.00    
+        <po-button p-label="Finalizar Compra"></po-button>
+    </div>
+</po-page-slide-footer>
+</po-page-slide>

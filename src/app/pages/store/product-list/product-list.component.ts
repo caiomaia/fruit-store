@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { ProductCard } from "./product-card/product-card.component";
-import productsData from '../../../products.json';
 import { SharedModule } from '../../../shared/modules/shared/shared-module';
+import { ProductsList } from '../../../shared/interfaces/Products';
+import { ProductsService } from '../../../shared/services/products-service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,9 @@ import { SharedModule } from '../../../shared/modules/shared/shared-module';
 export class ProductList {
   constructor() {}
 
+  private productsService = inject(ProductsService)
+
   height!: number;
-  productsList = productsData;
+  productsList$: Signal<ProductsList> = this.productsService.productsList$;
   
 }
