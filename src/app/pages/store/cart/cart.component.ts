@@ -2,7 +2,7 @@ import { Component, effect, inject, input, output, Signal, ViewChild } from '@an
 import { SharedModule } from '../../../shared/modules/shared/shared-module';
 import { PoPageSlideComponent } from '@po-ui/ng-components';
 import { ProductsService } from '../../../shared/services/products-service';
-import { ProductsList } from '../../../shared/interfaces/Products';
+import { CartProduct, ProductsList } from '../../../shared/interfaces/Products';
 
 @Component({
   selector: 'app-cart',
@@ -11,14 +11,14 @@ import { ProductsList } from '../../../shared/interfaces/Products';
   styleUrl: './cart.component.scss',
 })
 export class CartComponent {
-  
+
   private productsService = inject(ProductsService);
 
   @ViewChild('cartSlide', {static: true}) cartSlide!: PoPageSlideComponent;
 
   open = input<boolean>(false);
   closed = output<void>();
-  productsInCart$: Signal<ProductsList> = this.productsService.productsList$;
+  productsInCart$: Signal<CartProduct[]> = this.productsService.productsInCart$; // Recebe o signal readOnly do carrinho
 
   constructor() {
     effect(() => {
@@ -32,5 +32,5 @@ export class CartComponent {
     this.closed.emit();
   }
 
-  
+
 }

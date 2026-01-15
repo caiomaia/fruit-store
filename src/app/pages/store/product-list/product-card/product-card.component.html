@@ -6,7 +6,7 @@
         <p class="po-font-text-bold">R$ {{productUnitPrice()}}</p>
         <div class="buttons-card po-mt-2">
             <po-button p-icon="an an-minus" p-kind="tertiary" (p-click)="''"></po-button>
-            <po-button p-icon="an an-plus" p-kind="tertiary"></po-button>
+            <po-button p-icon="an an-plus" p-kind="tertiary" (p-click)="addToCart()"></po-button>
         </div>
     </div>
 </po-container>
