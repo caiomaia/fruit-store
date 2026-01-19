@@ -19,8 +19,20 @@ export class ProductCard {
   productStock = input<number>(0);
   productImage = input<string>('');
 
+  // TO-DO: Componentizar os botões do produto (add e remove)
   addToCart(): void {
     this.productsService.addProductToCart({
+      id: this.productId(),
+      name: this.productName(),
+      unitPrice: this.productUnitPrice(),
+      quantity: 1,
+      pathImage: this.productImage(),
+      totalPrice: this.productUnitPrice()
+    })
+  }
+
+  removeFromCart(): void {
+    this.productsService.removeProductFromCart({
       id: this.productId(),
       name: this.productName(),
       unitPrice: this.productUnitPrice(),

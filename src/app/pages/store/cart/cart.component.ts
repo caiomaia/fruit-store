@@ -32,5 +32,27 @@ export class CartComponent {
     this.closed.emit();
   }
 
+  // TO-DO: Componentizar os botões do produto (add e remove)
+  addToCart(cartProduct: CartProduct): void {
+    this.productsService.addProductToCart({
+      id: cartProduct.id,
+      name: cartProduct.name,
+      unitPrice: cartProduct.unitPrice,
+      quantity: cartProduct.quantity,
+      pathImage: cartProduct.pathImage,
+      totalPrice: cartProduct.totalPrice
+    })
+  }
+
+  removeFromCart(cartProduct: CartProduct): void {
+    this.productsService.removeProductFromCart({
+      id: cartProduct.id,
+      name: cartProduct.name,
+      unitPrice: cartProduct.unitPrice,
+      quantity: cartProduct.quantity,
+      pathImage: cartProduct.pathImage,
+      totalPrice: cartProduct.totalPrice
+    })
+  }
 
 }

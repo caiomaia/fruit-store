@@ -7,8 +7,8 @@
                     <p>Quantidade: {{cartProduct.quantity}}</p>
                     <p>Preço total: R$ {{cartProduct.totalPrice}}</p>
                     <div class="buttons-cart po-mt-2">
-                        <po-button p-icon="an an-minus" p-kind="tertiary" (p-click)="''"></po-button>
-                        <po-button p-icon="an an-plus" p-kind="tertiary"></po-button>
+                        <po-button p-icon="an an-minus" p-kind="tertiary" (p-click)="removeFromCart(cartProduct)"></po-button>
+                        <po-button p-icon="an an-plus" p-kind="tertiary" (p-click)="addToCart(cartProduct)"></po-button>
                     </div>
                 </div>
                 <img [src]="cartProduct.pathImage" width="120" height="100"/>
