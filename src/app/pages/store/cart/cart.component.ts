@@ -19,6 +19,7 @@ export class CartComponent {
   open = input<boolean>(false);
   closed = output<void>();
   productsInCart$: Signal<CartProduct[]> = this.productsService.productsInCart$; // Recebe o signal readOnly do carrinho
+  numberItensInCart$: Signal<number> = this.productsService.numberItensInCart$;
 
   constructor() {
     effect(() => {

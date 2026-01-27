@@ -6,7 +6,7 @@
     <po-container [p-height]="height">
         <app-product-list/>
     </po-container>
-    <app-cart 
+    <app-cart
         #cartComponent
         [open]="isCartOpen()"
         (closed)="isCartOpen.set(false)"

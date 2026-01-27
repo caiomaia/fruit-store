@@ -1,4 +1,4 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { computed, Injectable, signal, WritableSignal } from '@angular/core';
 import { CartProduct, Product, ProductsList } from '../interfaces/Products';
 import productsData from '../../products.json';
 
@@ -11,6 +11,11 @@ export class ProductsService {
 
   public productsInCart$ = this.productsInCart.asReadonly(); // O signal publico somente leitura para os componentes assinarem
   public productsList$ = this.productsList.asReadonly(); // O signal publico somente leitura para os componentes assinarem
+
+  // computed() cria um signal derivado, somente leitura, que é recalculado automaticamente a partir de outros signals.
+  public numberItensInCart$ = computed(() => this.productsInCart()
+    .reduce((total, product) => total + product.quantity, 0)
+  )
 
   addProductToCart(productToAdd: CartProduct): void {
     // Atualiza o valor do signal productsInCart.
