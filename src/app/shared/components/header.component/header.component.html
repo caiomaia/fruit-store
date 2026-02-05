@@ -1,4 +1,9 @@
 <po-header
   [p-menus]="menus"
-  [p-actions-tools]="actionTools$()"
+  [p-actions-tools]="actionTools"
 ></po-header>
+<app-cart
+  #cartComponent
+  [open]="isCartOpen()"
+  (closed)="isCartOpen.set(false)"
+/>

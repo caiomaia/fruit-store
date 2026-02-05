@@ -17,8 +17,14 @@
     }
 <po-page-slide-footer>
     <div class="cart-footer">
-        Produtos no carrinho: {{numberItensInCart$()}}
-        Total: R$ 20.00
+        <div class="products-info">
+          <p>
+            Quantidade de items no carrinho: {{numberItensInCart$()}}
+          </p>
+          <p>
+            Total: R$ {{totalPriceInCart$()}}
+          </p>
+        </div>
         <po-button p-label="Finalizar Compra"></po-button>
     </div>
 </po-page-slide-footer>

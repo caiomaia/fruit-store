@@ -1,33 +1,35 @@
-import { Component, computed, inject, Signal } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { SharedModule } from '../../modules/shared/shared-module';
 import { PoHeaderActionTool, PoMenuItem } from '@po-ui/ng-components';
-import { ProductsService } from '../../services/products-service';
+import { CartComponent } from '../../../pages/store/cart/cart.component';
 
 @Component({
   selector: 'app-header',
-  imports: [SharedModule],
+  imports: [SharedModule, CartComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   constructor() {}
 
-  private productsService = inject(ProductsService)
+  @ViewChild('cartComponent', { static: false }) cartComponent!: CartComponent;
+  isCartOpen = signal(false);
 
-  cartBadgeNumber$ = this.productsService.numberItensInCart$;
+  // private productsService = inject(ProductsService)
+  // cartBadgeNumber$ = this.productsService.numberItensInCart$;
 
   readonly menus: PoMenuItem[] = [
     { label: 'Loja', link: 'store', icon: 'an an-basket', shortLabel: 'Loja' },
     { label: 'Gerenciar produtos', link: 'management', icon: 'an an-book-open-text', shortLabel: 'Gerenciar' },
   ];
 
-  readonly actionTools$ = computed<PoHeaderActionTool[]>(() => [
+  readonly actionTools: PoHeaderActionTool[] = [
     {
       label: 'Carrinho',
       icon: 'an an-basket',
       tooltip: 'Abrir carrinho',
-      badge: this.cartBadgeNumber$()
+      action: () => this.isCartOpen.set(true)
     }
-  ])
+  ]
 
 }

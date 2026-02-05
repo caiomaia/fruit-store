@@ -1,14 +1,14 @@
 <po-page-default p-title="Loja">
     <div class="store-header po-mb-1">
         <h1 class="po-font-subtitle po-m-1">Escolha seus produtos do dia!</h1>
-        <po-button class="po-mr-1" p-label="Ver carrinho" (p-click)="openCart()"/>
+        <!-- <po-button class="po-mr-1" p-label="Ver carrinho" (p-click)="openCart()"/> -->
     </div>
     <po-container [p-height]="height">
         <app-product-list/>
     </po-container>
-    <app-cart
+    <!-- <app-cart
         #cartComponent
         [open]="isCartOpen()"
         (closed)="isCartOpen.set(false)"
-    />
+    /> -->
 </po-page-default>

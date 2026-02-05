@@ -7,19 +7,19 @@ import { CartComponent } from "./cart/cart.component";
   selector: 'app-store',
   imports: [
     SharedModule,
-    ProductList,
-    CartComponent
+    ProductList
+    // CartComponent
 ],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })
 export class StoreComponent implements OnInit {
-  
-  @ViewChild('cartComponent', { static: false }) cartComponent!: CartComponent;
+
+  // @ViewChild('cartComponent', { static: false }) cartComponent!: CartComponent;
   constructor(){}
 
   height!: number;
-  isCartOpen = signal(false);
+  // isCartOpen = signal(false);
 
   ngOnInit(): void {
     this.updateContainerHeight();
@@ -31,8 +31,8 @@ export class StoreComponent implements OnInit {
     this.height = window.innerHeight - header;
   }
 
-  openCart(): void {
-    this.isCartOpen.set(true);
-  }
+  // openCart(): void {
+  //   this.isCartOpen.set(true);
+  // }
 
 }

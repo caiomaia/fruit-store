@@ -1,5 +1,5 @@
 import { computed, Injectable, signal, WritableSignal } from '@angular/core';
-import { CartProduct, Product, ProductsList } from '../interfaces/Products';
+import { CartProduct, ProductsList } from '../interfaces/Products';
 import productsData from '../../products.json';
 
 @Injectable({
@@ -15,6 +15,10 @@ export class ProductsService {
   // computed() cria um signal derivado, somente leitura, que é recalculado automaticamente a partir de outros signals.
   public numberItensInCart$ = computed(() => this.productsInCart()
     .reduce((total, product) => total + product.quantity, 0)
+  )
+
+  public totalPriceInCart$ = computed(() => this.productsInCart()
+    .reduce((total, product) => total + product.totalPrice, 0)
   )
 
   addProductToCart(productToAdd: CartProduct): void {
