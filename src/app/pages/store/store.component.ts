@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Host, HostListener, OnInit, signal, ViewChild } from '@angular/core';
 import { SharedModule } from '../../shared/modules/shared/shared-module';
 import { ProductList } from "./product-list/product-list.component";
 import { CartComponent } from "./cart/cart.component";
@@ -13,22 +13,30 @@ import { CartComponent } from "./cart/cart.component";
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })
-export class StoreComponent implements OnInit {
+export class StoreComponent implements AfterViewInit {
+  constructor(private cdr: ChangeDetectorRef){}
 
   // @ViewChild('cartComponent', { static: false }) cartComponent!: CartComponent;
-  constructor(){}
+  @ViewChild('storeHeader') headerRef!: ElementRef<HTMLElement>;
 
-  height!: number;
+  ngAfterViewInit(): void {
+    this.updateContainerHeight();
+  }
+
+  height: number = 0;
   // isCartOpen = signal(false);
 
-  ngOnInit(): void {
+  @HostListener('window:resize')
+  onResize(): void {
     this.updateContainerHeight();
-    window.addEventListener('resize', () => this.updateContainerHeight());
   }
 
   updateContainerHeight(): void {
-    const header: number = 170;
-    this.height = window.innerHeight - header;
+    if (!this.headerRef) return;
+
+    const headerHeight = this.headerRef.nativeElement.offsetHeight;
+    this.height = window.innerHeight - headerHeight;
+    this.cdr.detectChanges(); // Ensure the view updates with the new height value
   }
 
   // openCart(): void {
