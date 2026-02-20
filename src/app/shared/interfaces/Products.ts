@@ -20,3 +20,11 @@ export interface CartProduct {
   pathImage: string,
   totalPrice: number
 }
+
+export interface ManageProduct {
+  id: number
+  name: string
+  category: string
+  unitPrice: number
+  quantity: number
+}

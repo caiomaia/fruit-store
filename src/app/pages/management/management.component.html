@@ -1,1 +1,26 @@
-<p>management-component works!</p>
+<po-page-default>
+  <div #managementHeader class="management-header po-mb-1">
+    <h1 class="po-font-subtitle po-m-1">Gerenciamento de produtos</h1>
+    <div class="management-header-actions">
+      <po-button p-label="Aplicar promoção"></po-button>
+      <po-button p-label="Incluir produto" p-kind="primary"></po-button>
+    </div>
+  </div>
+  <po-table
+    [p-columns]="productTableColumns"
+    [p-items]="productsList$().products"
+    [p-actions]="productTableActions"
+    p-actions-right
+    p-components-size="small"
+    p-spacing="small"
+    p-striped
+    p-hide-table-search=false
+    [p-selectable]=true
+    [p-height]="heightTable"
+  >
+  </po-table>
+  <app-manage-product #manageProductComponent
+    [open]="isManageModalOpen()"
+    (closed)="isManageModalOpen.set(false)"
+  />
+</po-page-default>

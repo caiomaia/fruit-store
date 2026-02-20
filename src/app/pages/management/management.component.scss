@@ -1,0 +1,12 @@
+.management-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .management-header-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+}
