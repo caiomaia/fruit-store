@@ -18,5 +18,9 @@ import { SharedModule } from './shared/modules/shared/shared-module';
   styleUrls: ['./app.css'],
 })
 export class App {
+  readonly menus: PoMenuItem[] = [
+    { label: 'Loja', link: 'store', icon: 'an an-basket', shortLabel: 'Loja' },
+    { label: 'Gerenciar produtos', link: 'management', icon: 'an an-book-open-text', shortLabel: 'Gerenciar' },
+  ];
 
 }

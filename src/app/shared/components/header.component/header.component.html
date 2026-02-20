@@ -1,7 +1,8 @@
-<po-header
-  [p-menus]="menus"
-  [p-actions-tools]="actionTools"
-></po-header>
+<po-toolbar
+    p-title="Fruit store"
+    [p-actions]="action"
+    p-actions-icon="an an-shopping-cart-simple"
+  ></po-toolbar>
 <app-cart
   #cartComponent
   [open]="isCartOpen()"

@@ -1,6 +1,6 @@
 import { Component, signal, ViewChild } from '@angular/core';
 import { SharedModule } from '../../modules/shared/shared-module';
-import { PoHeaderActionTool, PoMenuItem } from '@po-ui/ng-components';
+import { PoHeaderActionTool, PoMenuItem, PoToolbarAction } from '@po-ui/ng-components';
 import { CartComponent } from '../../../pages/store/cart/cart.component';
 
 @Component({
@@ -18,16 +18,10 @@ export class HeaderComponent {
   // private productsService = inject(ProductsService)
   // cartBadgeNumber$ = this.productsService.numberItensInCart$;
 
-  readonly menus: PoMenuItem[] = [
-    { label: 'Loja', link: 'store', icon: 'an an-basket', shortLabel: 'Loja' },
-    { label: 'Gerenciar produtos', link: 'management', icon: 'an an-book-open-text', shortLabel: 'Gerenciar' },
-  ];
-
-  readonly actionTools: PoHeaderActionTool[] = [
+  readonly action: PoToolbarAction[] = [
     {
-      label: 'Carrinho',
+      label: 'Abrir carrinho',
       icon: 'an an-basket',
-      tooltip: 'Abrir carrinho',
       action: () => this.isCartOpen.set(true)
     }
   ]
